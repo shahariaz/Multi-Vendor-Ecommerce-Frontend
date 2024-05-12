@@ -23,7 +23,7 @@ export default function Login() {
           <p className="text-sm mb-3 font-medium  text-center">
             Please Login your account
           </p>
-          <form>
+          <form onSubmit={submitHandle}>
             <div className="flex flex-col w-full gap-1 mb-3">
               <label htmlFor="email">Email</label>
               <input
@@ -50,10 +50,7 @@ export default function Login() {
               />
             </div>
 
-            <button
-              onClick={submitHandle}
-              className="w-full px-3 py-2 rounded-md bg-slate-800 text-white hover:shadow-blue-300 hover:shadow-sm"
-            >
+            <button className="w-full px-3 py-2 rounded-md bg-slate-800 text-white hover:shadow-blue-300 hover:shadow-sm">
               Login
             </button>
             <div className="flex items-center mb-3 gap-3 justify-center">
