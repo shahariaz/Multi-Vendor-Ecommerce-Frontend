@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { useState } from "react";
 export default function Register() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const inputHandle = (event) => {
+    setUser({
+      ...user,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const submitHandle = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="min-h-screen min-w-full bg-[rgb(205,202,233)] flex justify-center items-center">
       <div className="w-[350px] text-[#fff] p-2">
@@ -18,6 +34,8 @@ export default function Register() {
                 type="text"
                 name="name"
                 id="name"
+                onChange={inputHandle}
+                value={user.name}
                 placeholder="Enter your name"
                 className="w-full px-3 py-2 rounded-md bg-transparent outline-none border border-slate-700"
               />
@@ -25,9 +43,11 @@ export default function Register() {
             <div className="flex flex-col w-full gap-1 mb-3">
               <label htmlFor="email">Email</label>
               <input
+                onChange={inputHandle}
                 type="email"
                 name="email"
                 id="email"
+                value={user.email}
                 placeholder="Enter your email"
                 className="w-full px-3 py-2 rounded-md bg-transparent outline-none border border-slate-700"
               />
@@ -35,11 +55,14 @@ export default function Register() {
             <div className="flex flex-col w-full gap-1 mb-3">
               <label htmlFor="password">password</label>
               <input
+                onChange={inputHandle}
                 type="password"
                 name="password"
                 id="password"
+                value={user.password}
                 placeholder="Enter your password"
                 className="w-full px-3 py-2 rounded-md bg-transparent outline-none border border-slate-700"
+                autoComplete="current-password"
               />
             </div>
             <div className="flex items-center w-full gap-3 mb-3">
@@ -53,7 +76,10 @@ export default function Register() {
                 I agree to privacy policy & treams
               </label>
             </div>
-            <button className="w-full px-3 py-2 rounded-md bg-slate-800 text-white hover:shadow-blue-300 hover:shadow-sm">
+            <button
+              onClick={submitHandle}
+              className="w-full px-3 py-2 rounded-md bg-slate-800 text-white hover:shadow-blue-300 hover:shadow-sm"
+            >
               Register
             </button>
             <div className="flex items-center mb-3 gap-3 justify-center">
