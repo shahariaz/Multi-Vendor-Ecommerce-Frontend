@@ -15,12 +15,11 @@ export default function AdminLogin() {
     <div className="min-h-screen min-w-full bg-white flex justify-center items-center shadow-2xl">
       <div className="w-[350px] text-[#000000] p-2">
         <div className="bg-slate-200 p-4 border rounded-md">
-          <h2 className="text-xl mb-3 font-bold text-center">
-            Welcome to Ecommerce
-          </h2>
-          <p className="text-sm mb-3 font-medium  text-center">
-            Please Log in your account
-          </p>
+          <div className="h-[70px] flex justify-center items-center">
+            <div className="w-[180px] h-[50px]">
+              <img src="http://localhost:5173/images/logo.png" alt="logo"></img>
+            </div>
+          </div>
           <form onSubmit={submitHandle}>
             <div className="flex flex-col w-full gap-1 mb-3">
               <label htmlFor="email">Email</label>
