@@ -217,6 +217,64 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
+      <div className="w-full bg-[#6a5fdf] p-4 rounded-md mt-6">
+        <div className="flex justify-between items-center">
+          <h2 className="font-semibold text-lg text-[#d0d2d6] pb-3">
+            Recent Orders
+          </h2>
+          <Link className="font-semibold text-sm text-[#d0d2d6]">View All</Link>
+        </div>
+        <div className="relative overflow-x-auto ">
+          <table className=" w-full text-sm text-[#d0d2d6] text-left">
+            <thead className="uppercase border-b border-slate-700 text-[#d0d2d6]  ">
+              <tr>
+                <th className="px-4 py-3">Order ID</th>
+                <th className="px-4 py-3">Price</th>
+                <th className="px-4 py-3">Payment Status</th>
+                <th className="px-4 py-3">Order Status</th>
+                <th className="px-4 py-3">Active</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[1, 2, 3, 4, 5].map((d, i) => (
+                <tr key={i}>
+                  <td
+                    scope="row"
+                    className="py-3 px-4 font-medium whitespace-nowrap"
+                  >
+                    #3433
+                  </td>
+                  <td
+                    scope="row"
+                    className="py-3 px-4 font-medium whitespace-nowrap"
+                  >
+                    $456
+                  </td>
+                  <td
+                    scope="row"
+                    className="py-3 px-4 font-medium whitespace-nowrap"
+                  >
+                    Pending
+                  </td>
+                  <td
+                    scope="row"
+                    className="py-3 px-4 font-medium whitespace-nowrap"
+                  >
+                    Pending
+                  </td>
+
+                  <td
+                    scope="row"
+                    className="py-3 px-4 font-medium whitespace-nowrap"
+                  >
+                    <Link>View</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
